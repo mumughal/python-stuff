@@ -1,5 +1,5 @@
 import unittest
-from main import calculate
+from task1 import calculate
 
 
 class TestStringMethods(unittest.TestCase):

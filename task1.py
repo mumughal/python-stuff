@@ -1,5 +1,5 @@
-
 import re
+
 def add(x, y):
     return x + y
 
@@ -13,7 +13,7 @@ def subtract(x, y):
     return x - y
 
 def check_more_precedence(x, y):
-    if (y in ['(', ')']) or (x in ['(', ')']) or (x in ['+', '-'] and y == ['*', '/']):
+    if (y in ['(', ')']) or (x in ['(', ')']) or (x in ['+', '-'] and y in ['*', '/']):
         return False
     else:
         return True
@@ -39,7 +39,7 @@ def calculate(equation):
         if x in operators:
             if operator_stack == []:
                 operator_stack.append(x)
-            elif check_more_precedence(x, operator_stack[len(operator_stack)-1]):
+            elif check_more_precedence(operator_stack[len(operator_stack)-1], x):
                 less_precednece_op = operator_stack.pop()
                 number2 = number_stack.pop()
                 number1 = number_stack.pop()
